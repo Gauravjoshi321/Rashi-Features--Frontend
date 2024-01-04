@@ -55,7 +55,7 @@ html {
 }
 
 body {
-  font-family: "cinzel", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: var(--color-grey-700);
 
   transition: color 0.3s, background-color 0.3s;

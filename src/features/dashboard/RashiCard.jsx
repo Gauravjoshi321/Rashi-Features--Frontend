@@ -21,6 +21,10 @@ function RashiCard() {
       <Heading
         as="h1"
         color="var(--color-grey-600)"
+        style={{
+          display: "flex",
+          justifyContent: "center"
+        }}
       >
         Choose Your Zodiac sign.
       </Heading>
