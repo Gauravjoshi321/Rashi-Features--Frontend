@@ -7,7 +7,7 @@ const StyledAppLayout = styled.div`
   display: grid;
   grid-template-rows: 5rem 1fr 5rem;
 
-  background-color: var(--color-grey-100);
+  background-color: var(--color-grey-50);
   height: 100vh;
 `
 

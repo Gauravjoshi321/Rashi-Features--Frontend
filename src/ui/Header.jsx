@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
-  background-color: var(--color-brand-500);
+  background-color: var(--color-grey-50);
 `
 
 function Header() {
