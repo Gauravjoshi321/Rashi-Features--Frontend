@@ -156,7 +156,7 @@ function RashiCardItem() {
         </P>
       </Container>
 
-      <Button>Details</Button>
+      <Button variation="primary">Details</Button>
 
     </StyledRashiCardItem >
   )
