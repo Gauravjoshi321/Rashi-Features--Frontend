@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const StyledFooter = styled.footer`
-  background-color: var(--color-grey-50);
+  background-color: var(--color-brand-500);
 `
 
 function Footer() {

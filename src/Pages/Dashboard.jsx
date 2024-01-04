@@ -1,7 +1,9 @@
+import RashiCard from "../features/dashboard/RashiCard";
+
 function Dashboard() {
   return (
     <div>
-      DashBoard
+      <RashiCard />
     </div>
   )
 }
