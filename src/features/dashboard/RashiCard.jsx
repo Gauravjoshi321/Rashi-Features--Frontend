@@ -5,20 +5,23 @@ import useRashi from "./useRashi";
 import Spinner from "../../ui/Spinner";
 
 const StyledRashiCard = styled.div`
-  padding: 3rem 3rem;
+  padding: 3rem 6rem;
 `
 
 const RashiCardsGrid = styled.div`
   padding: 2rem 2rem;
+
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  grid-row-gap: 5rem;
   align-items: center;
   justify-items: center;
 `
 
 function RashiCard() {
-  const { allRashis, error, isLoadingRashis } = useRashi();
+  const { allRashis, isLoadingRashis } = useRashi();
+  if (allRashis) console.log(allRashis.rashis);
 
   if (isLoadingRashis) return <Spinner />
 
@@ -36,7 +39,8 @@ function RashiCard() {
       </Heading>
 
       <RashiCardsGrid>
-        <RashiCardItem allRashis={allRashis} />
+        {allRashis.rashis.map(rashi => <RashiCardItem key={rashi._id} rashi={rashi} />)}
+        <RashiCardItem />
       </RashiCardsGrid>
     </StyledRashiCard>
   )

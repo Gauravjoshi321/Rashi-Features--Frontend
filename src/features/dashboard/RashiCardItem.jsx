@@ -111,7 +111,7 @@ const P = styled.p`
   
 `
 
-function RashiCardItem({ allRashis }) {
+function RashiCardItem() {
   const StartDate = new Date(data.startDate.date);
 
   const startMonth = getMonth(StartDate) + 1;
@@ -137,7 +137,6 @@ function RashiCardItem({ allRashis }) {
 
       <Img src={data.image[0]} />
       <Name>{data.name}</Name>
-
 
       <Container>
         <SpecialQuality>{data.specialQuality}</SpecialQuality>
