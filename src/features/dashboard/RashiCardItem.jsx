@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Button from "../../ui/Button";
 import { format, getMonth, getDate } from "date-fns";
+import useRashi from "./useRashi";
 
 const data = {
   _id: {
@@ -77,7 +78,7 @@ const Name = styled.h3`
   padding-top: 0.3rem;
   display: flex;
   justify-content: flex-end;
-  color: #ea1515;
+  color: #cda206;
   font-family: "cinzel", sans-serif;
   font-size: 2rem;
   background-color: var(--color-grey-100);
@@ -110,6 +111,9 @@ const P = styled.p`
 `
 
 function RashiCardItem() {
+  const { allRashis, error, isLoadingRashis } = useRashi();
+  if (allRashis) console.log(allRashis);
+
   const StartDate = new Date(data.startDate.date);
 
   const startMonth = getMonth(StartDate) + 1;
