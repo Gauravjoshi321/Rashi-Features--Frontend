@@ -21,8 +21,6 @@ const RashiCardsGrid = styled.div`
 
 function RashiCard() {
   const { allRashis, isLoadingRashis } = useRashi();
-  if (allRashis) console.log(allRashis.rashis);
-
   if (isLoadingRashis) return <Spinner />
 
   return (
@@ -39,7 +37,11 @@ function RashiCard() {
       </Heading>
 
       <RashiCardsGrid>
-        {allRashis.rashis.map(rashi => <RashiCardItem key={rashi._id} rashi={rashi} />)}
+        {allRashis.rashis.map(rashi => <RashiCardItem
+          key={rashi._id}
+          rashi={rashi}
+        />
+        )}
         <RashiCardItem />
       </RashiCardsGrid>
     </StyledRashiCard>

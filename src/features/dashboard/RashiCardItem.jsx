@@ -1,59 +1,18 @@
 import styled from "styled-components";
 import Button from "../../ui/Button";
-import { format, getMonth, getDate } from "date-fns";
-import useRashi from "./useRashi";
-import Spinner from "../../ui/Spinner";
+import { endDateCalculator, startDateCalculator } from "../../utils/dateCalculators";
 
-const data = {
-  _id: {
-    $oid: "64fc229b1f37532e4719942e"
-  },
-  name: "Gemini",
-  image: [
-    "gemini-1.jpg",
-    "gemini-2.jpg"
-  ],
-  nameLetter: [
-    "K",
-    "CHH",
-    "GH",
-    "Q",
-    "C"
-  ],
-  specialQuality: "Masterful Communicator",
-  positives: {
-    1: "Gemini is highly adaptable and can easily switch between different situations and social circles. They thrive in diverse environments and can connect with people from all walks of life.",
-    2: "Gemini is intellectually curious. They enjoy learning and exploring new ideas, making them great conversationalists and lifelong learners.",
-    3: "Gemini individuals are excellent communicators. They express themselves well, and their engaging conversation style makes them popular among friends and colleagues.",
-    4: "Gemini's versatility allows them to handle multiple tasks and roles effectively. They have a diverse range of interests and can excel in various areas.",
-    5: "Gemini's curiosity drives them to seek out new experiences and knowledge. They have an innate desire to understand the world around them."
-  },
-  negatives: {
-    1: "Gemini's ability to see multiple perspectives can lead to indecision. They may struggle to commit to a single choice, constantly weighing pros and cons.",
-    2: "Gemini's love for variety can sometimes make them appear superficial, as they may skim the surface of various topics without delving deep into any one subject.",
-    3: "Gemini individuals can get easily bored if not mentally stimulated. This restlessness may lead them to jump from one activity or interest to another, potentially leaving things unfinished.",
-    4: "Due to their duality, Geminis can be inconsistent in their behaviors and opinions. What they feel or believe one day may change the next.",
-    5: "With many interests, Gemini can sometimes struggle to focus on a single task. This scattered focus might hinder their ability to see projects through to completion."
-  },
-  startDate: {
-    date: "2001-05-20T18:30:00.000Z"
-  },
-  endDate: {
-    date: "2001-06-19T18:30:00.000Z"
-  },
-  description: "Gemini is the third sign of the zodiac, symbolized by the Twins. People born between May 21 and June 20 fall under this sign. Gemini is an Air sign, and it is ruled by Mercury, the planet of communication, intellect, and versatility.",
-  slug: "gemini",
-  __v: 0
-}
 
 const StyledRashiCardItem = styled.div`
   border: 0.2rem solid var(--color-grey-300);
   border-radius: 0.8rem;
   position: relative;
   width: 30rem;
+  height: 55rem;
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;
+  /* gap: 2rem; */
 
   button:last-child{
     align-self: flex-end;
@@ -101,7 +60,7 @@ const SpecialQuality = styled.p`
     width: 22rem;
     color: var(--color-grey-400);
     margin-bottom: 1rem;
-  `
+  `;
 
 const LetterSpan = styled.span`
     
@@ -111,52 +70,36 @@ const P = styled.p`
   
 `
 
-function RashiCardItem() {
-  const StartDate = new Date(data.startDate.date);
+function RashiCardItem({ rashi }) {
 
-  const startMonth = getMonth(StartDate) + 1;
-  const editedStartMonth = startMonth < 9 ? `0${startMonth}` : startMonth;
-  const ansStartMonth = format(editedStartMonth, "MMM");
-
-  const startDay = getDate(StartDate);
-  const ansStartDay = startDay < 9 ? `0${startDay}` : startDay;
-
-
-  const EndDate = new Date(data.endDate.date);
-
-  const endMonth = getMonth(EndDate) + 1;
-  const editedEndMonth = endMonth < 9 ? `0${endMonth}` : endMonth;
-  const ansEndMonth = format(editedEndMonth, "MMM");
-
-  const endDay = getDate(EndDate);
-  const ansEndDay = endDay < 9 ? `0${endDay}` : endDay;
-
-
-  return (
+  if (rashi) return (
     <StyledRashiCardItem>
 
-      <Img src={data.image[0]} />
-      <Name>{data.name}</Name>
+      <div>
+        <Img src={rashi.image[0]} />
+        <Name>{rashi.name}</Name>
 
-      <Container>
-        <SpecialQuality>{data.specialQuality}</SpecialQuality>
+        <Container>
+          <SpecialQuality>{rashi.specialQuality}</SpecialQuality>
 
-        <p>Name letters: <LetterSpan>{data.nameLetter.join(", ")}</LetterSpan></p>
-        <P>From: {`${ansStartDay}-${ansStartMonth}`}</P>
-        <P>To: {`${ansEndDay}-${ansEndMonth}`}</P>
-        <P
-          style={{
-            fontFamily: "montserrat",
-            fontStyle: "italic",
-            fontSize: "1.3rem",
-            fontWeight: 300,
-            marginBottom: "2rem",
-            marginTop: "8px"
-          }}
-        >
-          {data.description.split(" ").slice(0, 20).join(" ")}...
-        </P>
-      </Container>
+          <p>Name letters: <LetterSpan>{rashi.nameLetter.join(", ")}</LetterSpan></p>
+          <P>From: {startDateCalculator(rashi)}</P>
+          <P>To: {endDateCalculator(rashi)}</P>
+          <P
+            style={{
+              fontFamily: "montserrat",
+              fontStyle: "italic",
+              fontSize: "1.3rem",
+              fontWeight: 300,
+              marginBottom: "2rem",
+              marginTop: "8px",
+              height: "7rem"
+            }}
+          >
+            {rashi.description.split(" ").slice(0, 16).join(" ")}...
+          </P>
+        </Container>
+      </div>
 
       <Button variation="primary">Details</Button>
 

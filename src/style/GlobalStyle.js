@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
 
   --image-grayscale: 0;
-  --image-opacity: 100%;
+  --image-opacity: 90%;
 
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
