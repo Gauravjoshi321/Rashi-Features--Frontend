@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Button from "../../ui/Button";
 import { format, getMonth, getDate } from "date-fns";
 import useRashi from "./useRashi";
+import Spinner from "../../ui/Spinner";
 
 const data = {
   _id: {
@@ -110,10 +111,7 @@ const P = styled.p`
   
 `
 
-function RashiCardItem() {
-  const { allRashis, error, isLoadingRashis } = useRashi();
-  if (allRashis) console.log(allRashis);
-
+function RashiCardItem({ allRashis }) {
   const StartDate = new Date(data.startDate.date);
 
   const startMonth = getMonth(StartDate) + 1;
@@ -139,6 +137,7 @@ function RashiCardItem() {
 
       <Img src={data.image[0]} />
       <Name>{data.name}</Name>
+
 
       <Container>
         <SpecialQuality>{data.specialQuality}</SpecialQuality>

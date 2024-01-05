@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Heading from "../../ui/Heading";
 import RashiCardItem from "./RashiCardItem";
+import useRashi from "./useRashi";
+import Spinner from "../../ui/Spinner";
 
 const StyledRashiCard = styled.div`
   padding: 3rem 3rem;
@@ -16,6 +18,10 @@ const RashiCardsGrid = styled.div`
 `
 
 function RashiCard() {
+  const { allRashis, error, isLoadingRashis } = useRashi();
+
+  if (isLoadingRashis) return <Spinner />
+
   return (
     <StyledRashiCard>
       <Heading
@@ -30,7 +36,7 @@ function RashiCard() {
       </Heading>
 
       <RashiCardsGrid>
-        <RashiCardItem />
+        <RashiCardItem allRashis={allRashis} />
       </RashiCardsGrid>
     </StyledRashiCard>
   )
