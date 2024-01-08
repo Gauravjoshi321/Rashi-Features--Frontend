@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Button from "../../ui/Button";
 import { endDateCalculator, startDateCalculator } from "../../utils/dateCalculators";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 
 const StyledRashiCardItem = styled.div`
@@ -71,6 +72,11 @@ const P = styled.p`
 `
 
 function RashiCardItem({ rashi }) {
+  const navigate = useNavigate();
+
+  function handleClickDetails(id) {
+    navigate(`/rashi/${id}`)
+  }
 
   if (rashi) return (
     <StyledRashiCardItem>
@@ -101,7 +107,12 @@ function RashiCardItem({ rashi }) {
         </Container>
       </div>
 
-      <Button variation="primary">Details</Button>
+      <Button
+        variation="primary"
+        onClick={() => handleClickDetails(rashi._id)}
+      >
+        Details
+      </Button>
 
     </StyledRashiCardItem >
   )

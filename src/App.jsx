@@ -33,7 +33,7 @@ function App() {
               <Route index element={<Navigate replace to="dashboard" />} />
 
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="rashi" element={<Rashi />} />
+              <Route path="rashi/:rashiID" element={<Rashi />} />
             </Route>
           </Routes>
         </BrowserRouter>

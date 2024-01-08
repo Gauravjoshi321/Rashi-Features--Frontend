@@ -16,9 +16,12 @@ const StyledButton = styled.button`
   `}
 `
 
-function Button({ variation, children }) {
+function Button({ variation, children, onClick }) {
   return (
-    <StyledButton variation={variation}>
+    <StyledButton
+      variation={variation}
+      onClick={onClick}
+    >
       {children}
     </StyledButton>
   )
