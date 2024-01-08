@@ -8,6 +8,7 @@ const StyledAppLayout = styled.div`
   grid-template-rows: 5rem 1fr 5rem;
 
   background-color: var(--color-grey-50);
+  min-height: 100vh;
 `
 
 function AppLayout() {
