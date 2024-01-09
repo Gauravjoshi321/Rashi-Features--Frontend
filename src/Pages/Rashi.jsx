@@ -1,3 +1,6 @@
+import styled from "styled-components";
+import Heading from "../ui/Heading";
+
 const data = {
   _id: {
     $oid: "6597c5c3ac027a1d226d5fd5"
@@ -37,12 +40,32 @@ const data = {
   __v: 0
 }
 
+const StyledRashi = styled.div`
+  
+`
+
 
 function Rashi() {
   return (
-    <div>
-      Rashi
-    </div>
+    <StyledRashi>
+      <Heading
+        as="h1"
+        color="var(--color-grey-500)"
+        style={{
+          margin: "1.5rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
+        {data.name} <span style={{
+          fontSize: "1.7rem"
+        }}
+        >
+          &nbsp;({data.specialQuality})
+        </span>
+      </Heading >
+    </StyledRashi>
   )
 }
 
