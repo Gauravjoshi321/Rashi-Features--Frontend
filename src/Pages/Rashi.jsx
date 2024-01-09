@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Heading from "../ui/Heading";
+import RashiImages from "../features/rashi/RashiImages";
 
 const data = {
   _id: {
@@ -44,7 +45,6 @@ const StyledRashi = styled.div`
   
 `
 
-
 function Rashi() {
   return (
     <StyledRashi>
@@ -65,6 +65,8 @@ function Rashi() {
           &nbsp;({data.specialQuality})
         </span>
       </Heading >
+
+      <RashiImages images={data.image} />
     </StyledRashi>
   )
 }
