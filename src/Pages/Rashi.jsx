@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Heading from "../ui/Heading";
 import RashiImages from "../features/rashi/RashiImages";
 import { endDateCalculator, startDateCalculator } from "../utils/dateCalculators";
+import RashiKeyData from "../features/rashi/RashiKeyData";
+import RashiHeading from "../features/rashi/RashiHeading";
 
 const data = {
   _id: {
@@ -48,83 +50,16 @@ const StyledRashi = styled.div`
   border: 1rem solid var(--color-grey-100);
 `
 
-const KeyData = styled.div`
-  grid-row: 2 / 3;
-  padding: 2rem 2rem;
-  height: 12rem;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  color: var(--color-grey-500);
-
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 2.2rem;
-  align-items: center;
-`
-
-const KeyDataNameTime = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-`
-
-const NameLetter = styled.p`
-  
-`
-
-const TimeCalc = styled.ul`
-  display: flex;
-  gap: 1.6rem;
-  /* flex-direction: column; */
-`
-
-const Description = styled.p`
-  font-size: 1.3rem;
-  line-height: 1.9;
-  padding: 2rem;
-  color: var(--color-grey-400);
-  background-color: #e3dfee;
-  border-radius: 0.8rem;
-  `
 
 function Rashi() {
   return (
     <StyledRashi>
-      <Heading
-        as="h1"
-        color="var(--color-grey-500)"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {data.name} <span style={{
-          fontSize: "1.7rem"
-        }}
-        >
-          &nbsp;({data.specialQuality})
-        </span>
-      </Heading >
+      <RashiHeading data={data} />
 
       <RashiImages images={data.image} />
 
-      <KeyData>
-        <KeyDataNameTime>
-          <NameLetter>
-            Name Letters: {data.nameLetter.join(", ")}
-          </NameLetter>
-
-          <TimeCalc>
-            <li>From: {startDateCalculator(data)}</li>
-            <li>To: {endDateCalculator(data)}</li>
-          </TimeCalc>
-        </KeyDataNameTime>
-
-        <Description>{data.description}</Description>
-      </KeyData>
-    </StyledRashi>
+      <RashiKeyData data={data} />
+    </StyledRashi >
   )
 }
 

@@ -22,7 +22,6 @@ const KeyDataNameTime = styled.div`
   gap: 1.2rem;
 `
 
-
 const TimeCalc = styled.ul`
   display: flex;
   gap: 1.6rem;
