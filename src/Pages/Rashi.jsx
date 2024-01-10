@@ -44,11 +44,11 @@ const data = {
 const StyledRashi = styled.div`
   display: grid;
   grid-template-columns: 2fr 1.3fr;
-  grid-template-rows: 10rem auto;
+  grid-template-rows: 10rem auto auto;
 `
 
 const RashiData = styled.div`
-  grid-row: 2 / -1;
+  /* grid-row: 2 / -1; */
 `
 
 function Rashi() {
@@ -62,7 +62,6 @@ function Rashi() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // maxHeight: "5rem",
         }}
       >
         {data.name} <span style={{
@@ -76,8 +75,8 @@ function Rashi() {
       <RashiImages images={data.image} />
 
       <RashiData>
-        <img src="/taurus-1.jpeg" />
-        <img src="/taurus-1.jpeg" />
+        {/* <img src="/taurus-1.jpeg" />
+        <img src="/taurus-1.jpeg" /> */}
       </RashiData>
     </StyledRashi>
   )

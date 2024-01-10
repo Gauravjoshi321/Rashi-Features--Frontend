@@ -1,43 +1,41 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledRashiImages = styled.div`
   position: relative;
 
-  grid-row: span 3;
+  grid-column: 2;
+  grid-row: 1 / span 2;
 `
 
-const Image1 = styled.img`
+const Image = styled.img`
   width: 30rem;
   aspect-ratio: 4 / 3;
   object-position: center;
   object-fit: cover;
-  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.247);
-  z-index: 1;
-
+  box-shadow: 5px 5px 5px 4px rgba(0, 0, 0, 0.311);
+  border-radius: 0.7rem;
   position: absolute;
-  top: 10rem;
-  left: 5rem;
-`;
 
-const Image2 = styled.img`
-  width: 30rem;
-  aspect-ratio: 4 / 3;
-  object-position: center;
-  object-fit: cover;
-  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.247);
-  z-index: 0;
-
-  position: absolute;
-  top: 4rem;
-  left: 25rem;
-`;
+  ${props => props.type === "one" && css`
+    z-index: 1;
+    position: absolute;
+    top: 10rem;
+    left: 5rem;
+  `}
+  ${props => props.type === "two" && css`
+    z-index: 0;
+    position: absolute;
+    top: 4rem;
+    left: 25rem;
+  `}
+`
 
 function RashiImages({ images }) {
 
   return (
     <StyledRashiImages>
-      <Image1 src={`/${images[1]}`} />
-      <Image2 src={`/${images[0]}`} />
+      <Image src={`/${images[1]}`} type="one" />
+      <Image src={`/${images[0]}`} type="two" />
     </StyledRashiImages>
   )
 }
