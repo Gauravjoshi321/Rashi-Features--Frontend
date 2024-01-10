@@ -22,7 +22,7 @@ export async function getRashiById(id) {
 
     const data = await res.json();
 
-    console.log(data);
+    return data.data;
 
   } catch (err) {
     console.log("Error:", err.message)

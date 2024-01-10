@@ -7,7 +7,6 @@ const StyledFooter = styled.footer`
 function Footer() {
   return (
     <StyledFooter>
-      Footer
     </StyledFooter>
   )
 }

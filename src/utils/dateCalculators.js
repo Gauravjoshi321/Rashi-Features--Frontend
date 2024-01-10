@@ -3,7 +3,6 @@ import { format, getDate, getMonth } from "date-fns";
 export function startDateCalculator(rashi) {
 
   const StartDate = new Date(rashi.startDate);
-  console.log(StartDate);
 
   const startMonth = getMonth(StartDate) + 1;
   const editedStartMonth = startMonth < 9 ? `0${startMonth}` : startMonth;
