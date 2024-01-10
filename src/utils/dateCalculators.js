@@ -5,7 +5,8 @@ export function startDateCalculator(rashi) {
   const StartDate = new Date(rashi.startDate);
 
   const startMonth = getMonth(StartDate) + 1;
-  const editedStartMonth = startMonth < 9 ? `0${startMonth}` : startMonth;
+  const editedStartMonth = startMonth <= 9 ? `0${startMonth}` : `${startMonth}`;
+  console.log(editedStartMonth);
   const ansStartMonth = format(editedStartMonth, "MMM");
 
   const startDay = getDate(StartDate);
@@ -20,7 +21,7 @@ export function endDateCalculator(rashi) {
   const EndDate = new Date(rashi.endDate);
 
   const endMonth = getMonth(EndDate) + 1;
-  const editedEndMonth = endMonth < 9 ? `0${endMonth}` : endMonth;
+  const editedEndMonth = endMonth <= 9 ? `0${endMonth}` : `${endMonth}`;
   const ansEndMonth = format(editedEndMonth, "MMM");
 
   const endDay = getDate(EndDate);

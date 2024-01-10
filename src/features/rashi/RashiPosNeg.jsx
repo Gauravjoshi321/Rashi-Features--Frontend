@@ -42,6 +42,7 @@ const Li = styled.li`
   font-size: 1.2rem;
   line-height: 1.9;
   letter-spacing: 0.2px;
+  font-weight: 500;
 `
 
 function RashiPosNeg({ data }) {
