@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Heading from "../ui/Heading";
 import RashiImages from "../features/rashi/RashiImages";
+import { endDateCalculator, startDateCalculator } from "../utils/dateCalculators";
 
 const data = {
   _id: {
@@ -30,26 +31,62 @@ const data = {
     4: "Capricorn's strong work ethic can sometimes lead to overworking, neglecting personal time, or finding it challenging to relax.",
     5: "Capricorn tends to be cautious, often preferring to stay in their comfort zone rather than taking big risks."
   },
-  startDate: {
-    $date: "2001-12-21T18:30:00.000Z"
-  },
-  endDate: {
-    $date: "2001-01-18T18:30:00.000Z"
-  },
+  startDate: "2001-12-21T18:30:00.000Z",
+  endDate: "2001-01-18T18:30:00.000Z",
   description: "Capricorn is the tenth sign of the zodiac, symbolized by the Goat with a fish tail. People born between December 22 and January 19 fall under this sign. Capricorn is an Earth sign, and it is ruled by Saturn, the planet of discipline, responsibility, and structure.",
   slug: "capricorn",
   __v: 0
 }
 
+
 const StyledRashi = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1.3fr;
-  grid-template-rows: 10rem auto auto;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 7rem auto auto;
+  margin: 3rem 6rem;
+
+  border: 1rem solid var(--color-grey-100);
 `
 
-const RashiData = styled.div`
-  /* grid-row: 2 / -1; */
+const KeyData = styled.div`
+  grid-row: 2 / 3;
+  padding: 2rem 2rem;
+  height: 12rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: var(--color-grey-500);
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2.2rem;
+  align-items: center;
 `
+
+const KeyDataNameTime = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+`
+
+const NameLetter = styled.p`
+  
+`
+
+const TimeCalc = styled.ul`
+  display: flex;
+  gap: 1.6rem;
+  /* flex-direction: column; */
+`
+
+const Description = styled.p`
+  font-size: 1.3rem;
+  line-height: 1.9;
+  padding: 2rem;
+  color: var(--color-grey-400);
+  background-color: #e3dfee;
+  border-radius: 0.8rem;
+  `
 
 function Rashi() {
   return (
@@ -58,7 +95,6 @@ function Rashi() {
         as="h1"
         color="var(--color-grey-500)"
         style={{
-          margin: "1.5rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -74,10 +110,20 @@ function Rashi() {
 
       <RashiImages images={data.image} />
 
-      <RashiData>
-        {/* <img src="/taurus-1.jpeg" />
-        <img src="/taurus-1.jpeg" /> */}
-      </RashiData>
+      <KeyData>
+        <KeyDataNameTime>
+          <NameLetter>
+            Name Letters: {data.nameLetter.join(", ")}
+          </NameLetter>
+
+          <TimeCalc>
+            <li>From: {startDateCalculator(data)}</li>
+            <li>To: {endDateCalculator(data)}</li>
+          </TimeCalc>
+        </KeyDataNameTime>
+
+        <Description>{data.description}</Description>
+      </KeyData>
     </StyledRashi>
   )
 }
