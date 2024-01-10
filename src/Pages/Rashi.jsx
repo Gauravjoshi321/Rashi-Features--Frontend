@@ -3,6 +3,8 @@ import RashiImages from "../features/rashi/RashiImages";
 import RashiKeyData from "../features/rashi/RashiKeyData";
 import RashiHeading from "../features/rashi/RashiHeading";
 import RashiPosNeg from "../features/rashi/RashiPosNeg";
+import { getRashiById } from "../serviceAPI/rashi";
+import useRashi from "../features/rashi/useRashi";
 
 const data = {
   _id: {
@@ -51,6 +53,9 @@ const StyledRashi = styled.div`
 
 
 function Rashi() {
+
+  useRashi();
+
   return (
     <StyledRashi>
       <RashiHeading data={data} />
