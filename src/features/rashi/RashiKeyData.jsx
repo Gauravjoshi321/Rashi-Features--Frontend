@@ -30,6 +30,7 @@ const TimeCalc = styled.ul`
 const Description = styled.p`
   font-size: 1.3rem;
   line-height: 1.9;
+  margin: auto 3rem;
   padding: 2rem;
   color: var(--color-grey-400);
   background-color: #e3dfee;

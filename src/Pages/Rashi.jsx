@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import Heading from "../ui/Heading";
 import RashiImages from "../features/rashi/RashiImages";
-import { endDateCalculator, startDateCalculator } from "../utils/dateCalculators";
 import RashiKeyData from "../features/rashi/RashiKeyData";
 import RashiHeading from "../features/rashi/RashiHeading";
 
@@ -55,10 +53,9 @@ function Rashi() {
   return (
     <StyledRashi>
       <RashiHeading data={data} />
-
       <RashiImages images={data.image} />
-
       <RashiKeyData data={data} />
+
     </StyledRashi >
   )
 }
