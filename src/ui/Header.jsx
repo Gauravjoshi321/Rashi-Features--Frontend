@@ -15,18 +15,18 @@ const StyledHeader = styled.div`
     height: 3rem;
     color: white;
   }
-`
+  `
 
 const Logo = styled.p`
   font-size: 2rem;
   font-weight: 600;
-  box-shadow: 6px 1px 6px var(--color-grey-600)
-`
+  box-shadow: 6px 1px 6px var(--color-grey-600);
+  `;
 
 const Img = styled.img`
   width: 4rem;
   border-radius: 50%;
-`
+  `;
 
 function Header() {
   return (
@@ -37,5 +37,6 @@ function Header() {
     </StyledHeader>
   )
 }
+
 
 export default Header;

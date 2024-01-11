@@ -34,8 +34,12 @@ function RashiImages({ images }) {
 
   return (
     <StyledRashiImages>
-      <Image src={`/${images[1]}`} type="one" />
-      <Image src={`/${images[0]}`} type="two" />
+      <div>
+        <Image src={`/${images[1]}`} type="one" />
+      </div>
+      <div>
+        <Image src={`/${images[0]}`} type="two" />
+      </div>
     </StyledRashiImages>
   )
 }

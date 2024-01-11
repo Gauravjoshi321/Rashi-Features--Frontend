@@ -52,6 +52,12 @@ const GlobalStyle = createGlobalStyle`
 
 html {
   font-size: 62.5%;
+  width: 100%;
+  overflow-x: hidden;
+
+  @media(max-width: 890px) {
+  font-size: 55%;
+  }
 }
 
 body {
@@ -62,6 +68,8 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 input,
@@ -121,6 +129,7 @@ h6 {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 `
 

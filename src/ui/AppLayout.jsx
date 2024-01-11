@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 const StyledAppLayout = styled.div`
   display: grid;
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 7rem 1fr 5rem;
 
   background-color: var(--color-grey-50);
   min-height: 100vh;

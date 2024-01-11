@@ -1,11 +1,20 @@
 import styled from "styled-components";
-import Heading from "../../ui/Heading";
 import RashiCardItem from "./RashiCardItem";
 import useRashi from "./useRashi";
 import Spinner from "../../ui/Spinner";
 
 const StyledRashiCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   padding: 3rem 6rem;
+`
+
+const Heading = styled.h1`
+  display: flex;
+  justify-content: center;
+
+  color: var(--color-grey-600);
 `
 
 const RashiCardsGrid = styled.div`
@@ -14,10 +23,27 @@ const RashiCardsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.5rem;
-  grid-row-gap: 5rem;
+  grid-row-gap: 7rem;
   align-items: center;
   justify-items: center;
+
+  @media(max-width: 1415px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem 4.5rem;
+  }
+
+  @media(max-width: 1170px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 7rem;
+  }
+
+  @media(max-width: 790px) {
+    grid-template-columns: 1fr;
+    }
+ 
 `
+
+////////////////////////////////////////////////////////
 
 function RashiCard() {
   const { allRashis, isLoadingRashis } = useRashi();
@@ -25,16 +51,7 @@ function RashiCard() {
 
   return (
     <StyledRashiCard>
-      <Heading
-        as="h1"
-        color="var(--color-grey-600)"
-        style={{
-          display: "flex",
-          justifyContent: "center"
-        }}
-      >
-        Choose Your Zodiac sign.
-      </Heading>
+      <Heading>Choose Your Zodiac sign.</Heading>
 
       <RashiCardsGrid>
         {allRashis.rashis.map(rashi => <RashiCardItem

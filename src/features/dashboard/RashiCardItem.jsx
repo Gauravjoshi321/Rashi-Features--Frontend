@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import Button from "../../ui/Button";
 import { endDateCalculator, startDateCalculator } from "../../utils/dateCalculators";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const StyledRashiCardItem = styled.div`
   border: 0.2rem solid var(--color-grey-300);
   border-radius: 0.8rem;
   position: relative;
-  width: 30rem;
+  max-width: 30rem;
   height: 55rem;
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;
-  /* gap: 2rem; */
 
   button:last-child{
     align-self: flex-end;
@@ -25,10 +24,10 @@ const StyledRashiCardItem = styled.div`
 `
 
 const Img = styled.img`
+  width: 100%;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   display: block;
-  width:30rem;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
@@ -55,21 +54,14 @@ const Container = styled.div`
   `
 
 const SpecialQuality = styled.p`
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    font-weight: 700;
-    width: 22rem;
-    color: var(--color-grey-400);
-    margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  max-width: 22rem;
+  color: var(--color-grey-400);
+  margin-bottom: 1rem;
   `;
 
-const LetterSpan = styled.span`
-    
-  `
-
-const P = styled.p`
-  
-`
 
 function RashiCardItem({ rashi }) {
   const navigate = useNavigate();
@@ -88,10 +80,10 @@ function RashiCardItem({ rashi }) {
         <Container>
           <SpecialQuality>{rashi.specialQuality}</SpecialQuality>
 
-          <p>Name letters: <LetterSpan>{rashi.nameLetter.join(", ")}</LetterSpan></p>
-          <P>From: {startDateCalculator(rashi)}</P>
-          <P>To: {endDateCalculator(rashi)}</P>
-          <P
+          <p>Name letters: <span>{rashi.nameLetter.join(", ")}</span></p>
+          <p>From: {startDateCalculator(rashi)}</p>
+          <p>To: {endDateCalculator(rashi)}</p>
+          <p
             style={{
               fontFamily: "montserrat",
               fontStyle: "italic",
@@ -103,7 +95,7 @@ function RashiCardItem({ rashi }) {
             }}
           >
             {rashi.description.split(" ").slice(0, 16).join(" ")}...
-          </P>
+          </p>
         </Container>
       </div>
 
