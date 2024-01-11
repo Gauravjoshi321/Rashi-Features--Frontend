@@ -8,13 +8,26 @@ const StyledRashiCard = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   padding: 3rem 6rem;
+
+  @media(max-width: 380px) {
+    padding: 3rem 4rem;
+  }
 `
 
 const Heading = styled.h1`
   display: flex;
   justify-content: center;
-
   color: var(--color-grey-600);
+
+  @media(max-width: 590px) {
+    font-size: 2.5rem;
+  }
+  @media(max-width: 380px) {
+    font-size: 1.8rem;
+  }
+  @media(max-width: 340px) {
+    font-size: 1.6rem;
+  }
 `
 
 const RashiCardsGrid = styled.div`
@@ -38,8 +51,14 @@ const RashiCardsGrid = styled.div`
   }
 
   @media(max-width: 790px) {
+    gap: 4rem;
+    padding: 2rem 2rem;
+  }
+
+  @media(max-width: 590px) {
     grid-template-columns: 1fr;
-    }
+    padding: 0;
+  }
  
 `
 

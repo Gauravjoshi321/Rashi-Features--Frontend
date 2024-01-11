@@ -52,7 +52,7 @@ function RashiPosNeg({ data }) {
         <Heading>Positives</Heading>
         <PositiveData>
           {
-            data.positives.map(pos => <Li key={pos}>- {pos}</Li>)
+            data.positives.slice(0, 3).map(pos => <Li key={pos}>- {pos}</Li>)
           }
         </PositiveData>
       </Positives>
@@ -61,7 +61,7 @@ function RashiPosNeg({ data }) {
         <Heading>Negatives</Heading>
         <PositiveData>
           {
-            data.negatives.map(pos => <Li key={pos}>- {pos}</Li>)
+            data.negatives.slice(0, 3).map(pos => <Li key={pos}>- {pos}</Li>)
           }
         </PositiveData>
       </Negatives>

@@ -56,7 +56,11 @@ html {
   overflow-x: hidden;
 
   @media(max-width: 890px) {
-  font-size: 55%;
+  font-size: 53%;
+  }
+
+  @media(max-width: 280px) {
+  font-size: 45%;
   }
 }
 

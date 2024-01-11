@@ -9,7 +9,7 @@ const StyledRashiCardItem = styled.div`
   border-radius: 0.8rem;
   position: relative;
   max-width: 30rem;
-  height: 55rem;
+  height: auto;
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;

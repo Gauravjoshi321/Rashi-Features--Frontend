@@ -2,13 +2,12 @@ import styled, { css } from "styled-components";
 
 const StyledRashiImages = styled.div`
   position: relative;
-
   grid-column: 2;
   grid-row: 1 / span 2;
 `
 
 const Image = styled.img`
-  width: 30rem;
+  max-width: 28rem;
   aspect-ratio: 4 / 3;
   object-position: center;
   object-fit: cover;
@@ -34,12 +33,8 @@ function RashiImages({ images }) {
 
   return (
     <StyledRashiImages>
-      <div>
-        <Image src={`/${images[1]}`} type="one" />
-      </div>
-      <div>
-        <Image src={`/${images[0]}`} type="two" />
-      </div>
+      <Image src={`/${images[1]}`} type="one" />
+      <Image src={`/${images[0]}`} type="two" />
     </StyledRashiImages>
   )
 }

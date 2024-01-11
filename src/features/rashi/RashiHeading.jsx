@@ -1,10 +1,13 @@
 import styled from "styled-components"
 
 const StyledHeading = styled.h1`
+  font-size: 2.6rem;
   color: var(--color-grey-500);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: fit-content;
 `
 
 const StyledSpecialQuality = styled.span`

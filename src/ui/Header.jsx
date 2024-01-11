@@ -21,7 +21,11 @@ const Logo = styled.p`
   font-size: 2rem;
   font-weight: 600;
   box-shadow: 6px 1px 6px var(--color-grey-600);
-  `;
+
+  @media(max-width: 340px) {
+    font-size: 1.6rem;
+  }
+`;
 
 const Img = styled.img`
   width: 4rem;

@@ -10,10 +10,15 @@ import Spinner from "../ui/Spinner";
 const StyledRashi = styled.div`
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  grid-template-rows: 7rem auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 1rem;
   margin: 3rem 6rem;
-
+  padding: 1rem 2rem;
   border: 1rem solid var(--color-grey-100);
+
+  @media(max-width: 1378px) {
+    margin: 3rem 3rem;
+  }
 `
 
 

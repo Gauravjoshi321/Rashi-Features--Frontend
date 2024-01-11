@@ -3,7 +3,8 @@ import { endDateCalculator, startDateCalculator } from "../../utils/dateCalculat
 
 const StyledKeyData = styled.div`
   grid-row: 2 / 3;
-  padding: 2rem 2rem;
+  grid-column: 1;
+  padding: 1.2rem 3rem;
   height: 12rem;
   font-weight: 500;
   letter-spacing: 0.8px;
@@ -17,9 +18,11 @@ const StyledKeyData = styled.div`
 `
 
 const KeyDataNameTime = styled.div`
+  font-size: 1.6rem;
+
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 `
 
 const TimeCalc = styled.ul`
@@ -28,7 +31,7 @@ const TimeCalc = styled.ul`
 `
 
 const Description = styled.p`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.9;
   margin: auto 3rem;
   padding: 2rem;

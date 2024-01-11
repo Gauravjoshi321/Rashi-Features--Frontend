@@ -6,7 +6,6 @@ export function startDateCalculator(rashi) {
 
   const startMonth = getMonth(StartDate) + 1;
   const editedStartMonth = startMonth <= 9 ? `0${startMonth}` : `${startMonth}`;
-  console.log(editedStartMonth);
   const ansStartMonth = format(editedStartMonth, "MMM");
 
   const startDay = getDate(StartDate);
