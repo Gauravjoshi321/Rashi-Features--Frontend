@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 
 const StyledRashiImages = styled.div`
-  position: relative;
   grid-column: 2;
   grid-row: 1 / span 2;
+  padding-right: 30rem;
+  position: relative;
 `
 
 const Image = styled.img`
@@ -17,16 +18,39 @@ const Image = styled.img`
 
   ${props => props.type === "one" && css`
     z-index: 1;
-    position: absolute;
     top: 10rem;
     left: 5rem;
+
+    @media(max-width: 1200px) {
+    left: 2rem;
+    }
+  
+    @media(max-width: 780px) {
+      top: 17rem;
+    }
   `}
+
   ${props => props.type === "two" && css`
     z-index: 0;
-    position: absolute;
     top: 4rem;
     left: 25rem;
+
+    @media(max-width: 1200px) {
+      left: 18rem;
+    }
+  
+    @media(max-width: 780px) {
+      left: 12rem;
+    }
   `}
+
+  @media(max-width: 1340px) {
+    max-width: 22rem;
+  }
+
+  @media(max-width: 1200px) {
+    max-width: 20rem;
+  }
 `
 
 function RashiImages({ images }) {

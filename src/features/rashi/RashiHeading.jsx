@@ -1,13 +1,20 @@
 import styled from "styled-components"
 
-const StyledHeading = styled.h1`
-  font-size: 2.6rem;
-  color: var(--color-grey-500);
+const StyledHeading = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 
-  height: fit-content;
+  /* height: fit-content; */
+  
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
+`
+
+const Heading = styled.h1`
+  font-size: 2.6rem;
+  color: var(--color-grey-500);
 `
 
 const StyledSpecialQuality = styled.span`
@@ -18,7 +25,7 @@ const StyledSpecialQuality = styled.span`
 function RashiHeading({ data }) {
   return (
     <StyledHeading>
-      <span>{data.name}</span>&nbsp;
+      <Heading>{data.name}</Heading>&nbsp;
       <StyledSpecialQuality>({data.specialQuality})</StyledSpecialQuality>
     </StyledHeading >
   )

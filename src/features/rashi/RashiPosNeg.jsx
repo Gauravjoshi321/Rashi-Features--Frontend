@@ -5,7 +5,7 @@ const StyledRashiPosNeg = styled.div`
   grid-column: 1 / -1;
   padding-left: 2rem;
   padding-right: 2rem;
-  margin-top: 16rem;
+  /* margin-top: 16rem; */
 
   display: flex;
   align-items: start;
