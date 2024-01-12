@@ -12,9 +12,13 @@ const StyledKeyData = styled.div`
 
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   gap: 2.2rem;
   align-items: center;
+
+  @media(max-width: 650px) {
+    grid-row: 3;
+    grid-column: 1;
+  }
 `
 
 const KeyDataNameTime = styled.div`
@@ -26,7 +30,7 @@ const KeyDataNameTime = styled.div`
 
   @media(max-width: 1200px) {
     font-size: 1.4rem;
-    padding: 1.2rem 4rem 1.2rem 1.5rem;
+    padding: 1.2rem 1rem 1.2rem 1rem;
   }
 `
 
@@ -48,6 +52,11 @@ const Description = styled.p`
     font-size: 1.1rem;
     margin: 1.5rem;
     padding: 1.5rem;
+  }
+
+  @media(max-width: 650px) {
+    margin: 0;
+    max-width: 55rem;
   }
   `
 

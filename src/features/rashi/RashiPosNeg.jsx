@@ -5,11 +5,21 @@ const StyledRashiPosNeg = styled.div`
   grid-column: 1 / -1;
   padding-left: 2rem;
   padding-right: 2rem;
-  /* margin-top: 16rem; */
+  margin-top: 5rem;
 
   display: flex;
   align-items: start;
   justify-content: space-around;
+
+  @media(max-width: 1340px) {
+    margin-top: 0;
+  }
+
+  @media(max-width: 650px) {
+    flex-direction: column;
+    grid-row: 4;
+    grid-column: 1;
+  }
 `
 
 const Positives = styled.div`
@@ -43,6 +53,10 @@ const Li = styled.li`
   line-height: 1.9;
   letter-spacing: 0.2px;
   font-weight: 500;
+
+  @media(max-width: 650rem) {
+    line-height: 2;
+  }
 `
 
 function RashiPosNeg({ data }) {

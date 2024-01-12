@@ -4,8 +4,7 @@ const StyledHeading = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* height: fit-content; */
+  gap: 0.5rem;
   
   @media (max-width: 650px) {
     flex-direction: column;
@@ -25,7 +24,7 @@ const StyledSpecialQuality = styled.span`
 function RashiHeading({ data }) {
   return (
     <StyledHeading>
-      <Heading>{data.name}</Heading>&nbsp;
+      <Heading>{data.name}</Heading>
       <StyledSpecialQuality>({data.specialQuality})</StyledSpecialQuality>
     </StyledHeading >
   )
