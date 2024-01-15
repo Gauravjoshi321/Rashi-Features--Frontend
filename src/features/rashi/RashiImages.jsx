@@ -17,6 +17,15 @@ const StyledRashiImages = styled.div`
   @media(max-width: 525px) {
     padding: 3rem 3rem 0rem 3rem;
   }
+
+  @media(max-width: 400px) {
+    gap: 1.5rem;
+  }
+
+  @media(max-width: 345px) {
+    gap: 3rem;
+    padding: 3rem 0rem 0rem 0rem;
+  }
 `
 
 const Image = styled.img`
@@ -81,6 +90,10 @@ const Image = styled.img`
     position: static;
     max-width: 16rem;
   }
+
+  @media(max-width: 400px) {
+      max-width: 12rem;
+    }
 `
 
 function RashiImages({ images }) {
